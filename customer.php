@@ -88,3 +88,61 @@
         }
     </style>
     </head>
+    <body>
+    <header>
+        <div class="nav-search">
+            <input placeholder="Search" class="search-input">
+            <div class="search-icon">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+        </div>
+        <div class="header-right">
+            <span class="notification-bell"><i class="fa-regular fa-bell effect"></i></span>
+            <div class="profile-section"><i class="fa-regular fa-user effect"></i></div>
+        </div>  
+    </header>
+
+    <div class="container">
+        <button class="btn btn-primary my-5"><a href="user.php" class="text-light">Add User</a></button>
+        <table class="table">
+        <thead>
+            <tr>
+            <th scope="col">Sr.No</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Mobile</th>
+            <th scope="col">Password</th>
+            <th scope="col">Operations</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+                $sql = "Select * from `curd`";
+                $result = mysqli_query($con,$sql);
+                if($result){
+                    while($row = mysqli_fetch_assoc($result)){
+                        $id = $row['id'];
+                        $name = $row['name'];
+                        $email = $row['email'];
+                        $mobile = $row['mobile'];
+                        $password = $row['password'];
+                        echo '<tr>
+                        <th scope="row">'.$id.'</th>
+                        <td>'.$name.'</td>
+                        <td>'.$email.'</td>
+                        <td>'.$mobile.'</td>
+                        <td>'.$password.'</td>
+                        <td>
+                        <button class="btn btn-primary"><a href="update.php?updateid='.$id.'" class="text-light">Update</a></button>
+                        <button class="btn btn-danger"><a href="delete.php?deleteid='.$id.'" class="text-light">Delete</a></button>
+                        </td>
+                        </tr>';
+                    }
+                }
+            ?>
+            
+        </tbody>
+        </table>
+    </div>
+</body>
+</html>
