@@ -71,3 +71,89 @@
             border-bottom-right-radius: 4px;
             color: #0F1111;
         }
+        .nav-search:hover{
+            border: 2px solid orange;
+        }
+        .notification-bell {
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .profile-section {
+            cursor: pointer;
+            font-size: 24px;
+            margin-right: 20px;
+        }
+        .effect:hover{
+            color:  rgba(255, 166, 0, 0.825);;
+        }
+        /* Headings */
+        h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        h3 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 20px;
+            color: #333;
+        }
+
+        /* Form styles */
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 80%;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        select {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button[type="submit"] {
+            padding: 10px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        /* List styles */
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        li {
+            padding: 10px;
+            background-color: #f4f4f4;
+            margin-bottom: 10px;
+            border-left: 4px solid #4CAF50;
+            border-radius: 5px;
+        }
+        li a{
+            font-weight: 700;
+        }
+        .inventory-management{
+            display:flex;
+            flex-direction:column;
+            justify-content: center;
+            
+        }
