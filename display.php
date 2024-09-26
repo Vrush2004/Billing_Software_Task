@@ -238,3 +238,43 @@
             text-decoration: underline;
         }
     </style>
+    </head>
+<body>
+    <header>
+        <div class="nav-search">
+            <input placeholder="Search" class="search-input">
+            <div class="search-icon">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+        </div>
+        <div class="header-right">
+            <span class="notification-bell"><i class="fa-regular fa-bell effect"></i></span>
+            <div class="profile-section"><i class="fa-regular fa-user effect"></i></div>
+        </div>  
+    </header>
+
+    <!-- Dashboard Section -->
+    <section class="dashboard">
+        <h2>Dashboard</h2>
+        <div class="dashboard-metrics">
+            <div class="metric">
+                <h3>Total Sales</h3>
+                <p id="total-sales">0</p>
+            </div>
+            <div class="metric">
+                <h3>Total Revenue</h3>
+                <p id="total-revenue">$0</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation to Other Pages -->
+    <nav>
+        <ul>
+            <li><a href="customer.php">Customer Management</a></li>
+            <li><a href="inventory.php">Inventory Management</a></li>
+            <li><a href="./html/billing.html">Billing System</a></li>
+        </ul>
+    </nav>
+</body>
+</html>
