@@ -207,3 +207,72 @@
 
     </style>
     </head>
+    <body>
+    <header>
+        <div class="nav-search">
+            <input placeholder="Search" class="search-input">
+            <div class="search-icon">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+        </div>
+        <div class="header-right">
+            <span class="notification-bell"><i class="fa-regular fa-bell effect"></i></span>
+            <div class="profile-section"><i class="fa-regular fa-user effect"></i></div>
+        </div>  
+    </header>
+
+    <!-- Inventory Management Section -->
+    <section class="inventory-management">
+        <h2>Inventory Management</h2>
+        <form id="product-form">
+            <input type="text" placeholder="Product Name" id="product-name" required>
+            <input type="number" placeholder="Product Price" id="product-price" required>
+            <input type="number" placeholder="Product Quantity" id="product-quantity" required>
+            <input type="text" placeholder="Product Brand" id="product-brand" required>
+            <input type="text" placeholder="Product Supplier" id="product-supplier" required>
+            <input type="number" placeholder="Old Stock" id="old-stock" required>
+            <input type="text" placeholder="Product Category" id="product-category" required>
+            <button type="submit">Save</button>
+        </form>
+        <h3>View Products</h3>
+
+    <div class="container">
+        <table class="table">
+        <thead>
+            <tr>
+            <th scope="col">Product Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Brand</th>
+            <th scope="col">Operations</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+                $sql = "Select * from `inventory`";
+                $result = mysqli_query($con,$sql);
+                if($result){
+                    while($row = mysqli_fetch_assoc($result)){
+                        $name = $row['name'];
+                        $price = $row['price'];
+                        $quantity = $row['quantity'];
+                        $brand = $row['brand'];
+                        echo '<tr>
+                        <td>'.$name.'</td>
+                        <td>'.$price.'</td>
+                        <td>'.$quantity.'</td>
+                        <td>'.$brand.'</td>
+                        <td>
+                        <button class="btn btn-primary"><a href="update.php?updateid='.$id.'" class="text-light">Update</a></button>
+                        <button class="btn btn-danger"><a href="delete.php?deleteid='.$id.'" class="text-light">Delete</a></button>
+                        </td>
+                        </tr>';
+                    }
+                }
+            ?>
+            
+        </tbody>
+        </table>
+    </div>
+</body>
+</html>
