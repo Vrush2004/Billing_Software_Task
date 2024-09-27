@@ -157,3 +157,53 @@
             justify-content: center;
             
         }
+        /* Billing system specific styles */
+        #billing-products {
+            height: 120px;
+            overflow-y: scroll;
+        }
+
+        #total-amount {
+            font-weight: bold;
+            color: #4CAF50;
+        }
+
+        /* Customer, Inventory, and Billing Lists */
+        #customer-list, #product-list, #billing-list {
+            margin-top: 15px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            max-height: 200px;
+            overflow-y: scroll;
+        }
+
+        /* Footer Navigation */
+        nav {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #007BFF;
+            font-size: 18px;
+            padding: 10px;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+    </head>
