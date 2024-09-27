@@ -1,21 +1,12 @@
 <?php
     include 'connect.php';
-    $id=$_GET['updateid'];
-    $sql="Select * from `curd` where id='$id'";
-    $result=mysqli_query($con,$sql);
-    $row=mysqli_fetch_assoc($result);
-    $name=$row['name'];
-    $email=$row['email'];
-    $mobile=$row['mobile'];
-    $password=$row['password'];
-
     if(isset($_POST['submit'])){
         $name=$_POST['name'];
         $email=$_POST['email'];
         $mobile=$_POST['mobile'];
         $password=$_POST['password'];
 
-        $sql="update `curd` set id=$id,name='$name',email='$email',mobile='$mobile',password='$password' where id='$id'";
+        $sql="INSERT INTO `curd` (name,email,mobile,password) VALUES ('$name','$email','$mobile','$password')";
         $result = mysqli_query($con,$sql);
         if($result){
             header('location:display.php');
@@ -25,6 +16,7 @@
         }
     }
 ?>
+
 
 <!doctype html>
 <html lang="en">
@@ -43,24 +35,26 @@
     <form method="post">
   <div class="form-group">
     <label>Name</label>
-    <input type="text" class="form-control" placeholder="Enter your name" name="name" value=<?php echo $name;?>>
+    <input type="text" class="form-control" placeholder="Enter your name" name="name">
   </div>
   <div class="form-group">
     <label>Email</label>
-    <input type="email" class="form-control" placeholder="Enter your email" name="email" value=<?php echo $email;?>>
+    <input type="email" class="form-control" placeholder="Enter your email" name="email">
   </div>
   <div class="form-group">
     <label>Mobile Number</label>
-    <input type="text" class="form-control" placeholder="Enter your mobile number" name="mobile" value=<?php echo $mobile;?>>
+    <input type="text" class="form-control" placeholder="Enter your mobile number" name="mobile">
   </div>
   <div class="form-group">
     <label>Password</label>
-    <input type="password" class="form-control" placeholder="Enter your password" name="password" value=<?php echo $password;?>>
+    <input type="password" class="form-control" placeholder="Enter your password" name="password">
   </div>
   
-  <button type="submit" class="btn btn-primary" name="submit">Update</button>
-    </form>
+  <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+</form>
 
-    </div> 
+    </div>
+
+    
   </body>
 </html>
